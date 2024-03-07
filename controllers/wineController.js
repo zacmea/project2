@@ -6,7 +6,7 @@ const router = express.Router()
 // const db = require('../models')
 
 router.get('/', (req, res) =>{
-    res.send("wine show")
+    res.render("wine-show.ejs")
 })
 
 module.exports = router

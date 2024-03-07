@@ -6,7 +6,7 @@ const router = express.Router()
 // const db = require('../models')
 
 router.get('/', (req, res) =>{
-    res.render("users index")
+    res.render("user.ejs")
 })
 
 module.exports = router

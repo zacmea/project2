@@ -11,5 +11,11 @@ router.get('/', (req, res) =>{
     res.render("collections-index.ejs")
 })
 
+router.get('/:id', (req, res) =>{
+    const id= req.params.id
+    res.render("collections-show.ejs", {id})
+})
+
+
 
 module.exports = router
