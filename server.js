@@ -3,6 +3,8 @@
 const express = require('express')
 // const app = express()
 const methodOverride = require('method-override')
+const path = require('path');
+
 
 //set port
 const PORT = process.env.PORT || 3003
@@ -18,7 +20,7 @@ const app = express()
 
 //Setting app configs
 app.set('view engine', 'ejs')
-// app.set('view', path.join(__dirname, 'views'))
+// app.set('view', path.join(__dirname, 'views'))  What's this line for again??
 
 //Setting middlewares to use
 app.use(express.static('public')) //where the static files are housed
@@ -32,7 +34,7 @@ app.use('/collections', collectionsCtrl)
 app.use('/wines', wineCtrl)
 
 app.get('/', (req, res) =>{
-    res.send(hello)
+    res.send("hello")
 })
 // The "catch-all" route: Runs for any other URL that doesn't match the above routes
 // app.get('*', function (req, res) {
@@ -40,6 +42,6 @@ app.get('/', (req, res) =>{
 // });
 
 
-app.listen(port, () =>{
+app.listen(PORT, () =>{
     console.log("Wine server operating on port", PORT);
 })
