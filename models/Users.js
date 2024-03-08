@@ -1,3 +1,16 @@
-let users = [{name: "john", password: "thepassword", email: "john@gmail.com", age: 24}]
+//connect schema to mongoose
+const mongoose = require('mongoose')
 
-module.exports = users
+//Defining how things should look in the database
+const userSchema = new mongoose.Schema({
+    username: String,
+    name: String,
+    email: String,
+    password: String
+})
+
+//Defining how data will be called in DB
+const User = mongoose.model('User', userSchema)
+
+
+module.exports = User

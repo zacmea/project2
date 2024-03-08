@@ -1,7 +1,7 @@
 //Require modules
-// require('dotenv').config()
+const dotenv = require('dotenv')
+require('dotenv').config()
 const express = require('express')
-// const app = express()
 const methodOverride = require('method-override')
 const path = require('path');
 
@@ -9,8 +9,9 @@ const path = require('path');
 //set port
 const PORT = process.env.PORT || 3003
 
-// const db = require('./models')
-
+//Setting DB connection
+require('./config/database')
+//Requiring/connecting controllers
 const collectionsCtrl = require('./controllers/collectionController')
 const userCtrl = require('./controllers/userController')
 const wineCtrl = require('./controllers/wineController')
@@ -20,7 +21,7 @@ const app = express()
 
 //Setting app configs
 app.set('view engine', 'ejs')
-// app.set('view', path.join(__dirname, 'views'))  What's this line for again??
+// app.set('view', path.join(__dirname, 'views'))  What's this line for again?? It breaketh the code
 
 //Setting middlewares to use
 app.use(express.static('public')) //where the static files are housed
@@ -33,15 +34,18 @@ app.use('/users', userCtrl)
 app.use('/collections', collectionsCtrl)
 app.use('/wines', wineCtrl)
 
+//-----ROUTES-----
+//Default
 app.get('/', (req, res) =>{
     res.send("hello")
 })
-// The "catch-all" route: Runs for any other URL that doesn't match the above routes
-// app.get('*', function (req, res) {
-//     res.render('404')
-// });
+
+//"catch-all" route: for any URL that doesn't match any defined routes
+app.get('*', function (req, res) {
+    res.render('404')
+});
 
 
 app.listen(PORT, () =>{
-    console.log("Wine server operating on port", PORT);
+    console.log("Wine server pouring from 'pour-t'", PORT);
 })
