@@ -3,12 +3,12 @@
 const express = require('express')
 const router = express.Router()
 
-// const db = require('../models')
+const db = require('../models') //this will require the index.js file in the models folder, which in turn requires the WineModel.js file
 
 //-------ROUTES------
 //Index - this will be the "browse all wines" page
 router.get('/', (req, res) =>{
-    res.render("wine-index.ejs")
+    res.render("wine-index.ejs", {db})
 })
 
 //New

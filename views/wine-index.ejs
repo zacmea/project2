@@ -6,6 +6,10 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <h1>List of wines</h1>
+    <ul>
+        <% db.Wine.forEach((wine) => { %>
+            <li><%= wine.name %></li>
+        <% }); %>
 </body>
 </html>

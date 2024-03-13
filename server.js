@@ -5,7 +5,7 @@ const express = require("express");
 const methodOverride = require("method-override");
 const path = require("path");
 const session = require("express-session");
-// const bcrypt = require("bcrypt");
+const bcrypt = require("bcrypt");
 // const bodyParser = require("body-parser");
 
 //set port & other necessary variables
@@ -15,7 +15,7 @@ let plainTextPassword = "";
 
 //Setting DB connection
 // const db = require("./config/database");
-const db = require("./models"); //This will require the index.js file in the models folder
+const db = require("./models"); //This will require the index.js file in the models folder, which in turn requires the UserModel.js file
 // const mongoose = require("mongoose");
 
 
@@ -29,7 +29,7 @@ const app = express();
 
 //Setting app configs
 app.set("view engine", "ejs");
-app.set('view', path.join(__dirname, 'views'))
+app.set('views', path.join(__dirname, 'views'))
 
 //Setting middlewares to use
 app.use(express.static("public")); //where the static files are housed
@@ -46,7 +46,7 @@ app.use(                                 //req.send gets access to req.session--
 );
 
 //Telling our app to look at appropriate controllers for different rout prefixes
-// app.use("/users", userCtrl);
+app.use("/users", userCtrl);
 app.use("/collections", collectionsCtrl);
 app.use("/wines", wineCtrl);
 
@@ -55,10 +55,10 @@ app.get("/seed", function (req, res) {
     db.Wine.deleteMany({}).then(() => {
         console.log("Deleted all wines");
     });
-    // db.Wine.insertMany(db.seedWines).then((addedWines) => {
-    //     console.log(`Added ${addedWines.length} wines to be drunk`);
-    //     res.json(addedWines);
-    // });
+    db.Wine.insertMany(db.seedWines).then((addedWines) => {
+        console.log(`Added ${addedWines.length} wines to be drunk`);
+        res.json(addedWines);
+    });
 });
 
 //Default

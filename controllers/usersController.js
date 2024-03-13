@@ -14,7 +14,7 @@ const db = require('../models/') //This will require the index.js file in the mo
 //------------------ROUTES------------------
 //default starting point
 router.get('/', (req, res) => {
-    res.render("user.ejs", {db, User})
+    res.render("user.ejs", {db})
 })
 //New User--Get form
 router.get('/new', (req, res) => {
@@ -23,37 +23,13 @@ router.get('/new', (req, res) => {
 
 //Create User--Post form
 router.post('/', async (req, res) => {
-    try{
         //overwrite user PW w hashed PW, then pass that in to our db
         req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10))
         //create user based on req.body data
         const newUser = await db.User.create(req.body)
         console.log(newUser);
-        res.redirect('/')
+        res.redirect('/')    
 })
-
-router.get('/login', (req, res) => {
-    create: async (req, res) => {
-        if (req.body.username && req.body.password) {
-            const { username, password } = req.body;
-            const passwordHash = bcrypt.hashSync(password, bcrypt.genSaltSync(saltRounds));
-            let newUser = {
-                username,
-                password: passwordHash,
-            };
-            try {
-                const createdUser = await db.User.create(newUser);
-                console.log(createdUser);
-                res.redirect('/users/login');
-            } catch (error) {
-                console.log(error);
-                res.send('Internal Server Error');
-            }
-        }
-    }
-    res.render("user.ejs", {newUser})
-})
-
 
 
 
