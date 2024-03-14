@@ -62,7 +62,7 @@ app.get("/seed", function (req, res) {
 
 //Default
 app.get("/", (req, res) => {
-    res.send("hello");
+    res.render("home");
 });
 
 //"catch-all" route: for any URL that doesn't match any defined routes
