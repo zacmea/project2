@@ -14,15 +14,8 @@ const saltRounds = 5;
 let plainTextPassword = "";
 
 //Setting DB connection
-// const db = require("./config/database");
 const db = require("./models"); //This will require the index.js file in the models folder, which in turn requires the UserModel.js file
-// const mongoose = require("mongoose");
 
-
-//Requiring/connecting controllers
-const collectionsCtrl = require("./controllers/collectionsController");
-const userCtrl = require("./controllers/usersController");
-const wineCtrl = require("./controllers/winesController");
 
 //creating express app
 const app = express();
@@ -45,12 +38,19 @@ app.use(                                 //req.send gets access to req.session--
     })
 );
 
+//Requiring/connecting controllers
+const collectionsCtrl = require("./controllers/collectionsController");
+const userCtrl = require("./controllers/usersController");
+const wineCtrl = require("./controllers/winesController");
+const sessionCtrl = require("./controllers/sessionsController");
+//-----ROUTES-----
 //Telling our app to look at appropriate controllers for different rout prefixes
 app.use("/users", userCtrl);
 app.use("/collections", collectionsCtrl);
 app.use("/wines", wineCtrl);
+app.use("/sessions", sessionCtrl);
 
-//-----ROUTES-----
+//SEED route
 app.get("/seed", function (req, res) {
     db.Wine.deleteMany({}).then(() => {
         console.log("Deleted all wines");
