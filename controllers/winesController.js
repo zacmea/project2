@@ -8,10 +8,10 @@ const db = require('../models') //this will require the index.js file in the mod
 //-------ROUTES------
 //Index - this will be the "browse all wines" page
 router.get('/', (req, res) =>{
-    // const vinos =  //This will return an array of all the wines in the db
-    const allWines = [db.Wine.find({})]
-    res.render("wine-index-browse.ejs", {allWines})
-    
+    db.Wine.find({})
+    .then(wines => {
+        res.render("wine-index-browse.ejs", {wines})
+    })
 })
 
 //New
@@ -24,8 +24,10 @@ router.get('/new', (req, res) =>{
 //Update
 
 //Create
-router.post('/', (req, res) =>{
-    res.render("wine-show.ejs")
+router.post('/', async (req, res) =>{
+    // req.body.collexn = SOME STUFF;
+    await db.Wine.create(req.body)
+        .then(wine => res.redirect(`/wines/${wine.id}`))
 })
 
 //Edit

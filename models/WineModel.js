@@ -12,9 +12,9 @@ const wineSchema = new mongoose.Schema({
     ratings: Number,
     price: mongoose.Decimal128,
     notes: String,
-    collection: {
+    collexn: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Collection'
+        ref: 'Collexn'
     }
 })
 // const wineSchema = new mongoose.Schema({

@@ -1,3 +1,5 @@
+//Remember: everything here is prefixed with /sessions
+
 const bcrypt = require("bcrypt");
 const router = require('express').Router()
 const db = require('../models/') //This will require the index.js file in the models folder, which in turn...?
@@ -15,6 +17,7 @@ router.post('/', async (req, res) => {
             return res.send("User not found")
     }else if( await bcrypt.compareSync(req.body.password, foundUser.password)){
             req.session.currentUser = foundUser  //HEY YOU!!  This adds currentUser to the req.session object, so we can query the db where owner of an item is the currentUser.id
+            console.log("Successfully logged in!");
             res.redirect('/')
     }else {
             res.send("Invalid password")

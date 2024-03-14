@@ -16,5 +16,5 @@ module.exports = {
     Wine: require('./WineModel'),
     seedWines: require('./Seed'),
     User: require('./UserModel'),
-    Collection: require('./CollectionModel')
+    Collexn: require('./CollexnModel')
 }    

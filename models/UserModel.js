@@ -8,7 +8,7 @@ const userSchema = new mongoose.Schema({
     name: {type: String, required: true},
     email: {type: String, unique: true, required: true},
     password: {type: String, required: true},
-    collections: [{type: mongoose.Schema.Types.ObjectId, ref: 'Collection'}]
+    collexns: [{type: mongoose.Schema.Types.ObjectId, ref: 'Collexn'}]
 })
 
 //Defining how data will be called in DB

@@ -2,7 +2,7 @@
 const mongoose = require('mongoose')
 
 //Defining how things should look in the database
-const collectionSchema = new mongoose.Schema({
+const collexnSchema = new mongoose.Schema({
     name: String,
     numberOfWines: Number,
     winesIncluded: [{type: mongoose.Schema.Types.ObjectId, ref: 'Wine'}],
@@ -14,7 +14,7 @@ const collectionSchema = new mongoose.Schema({
 })
 
 //Defining how data will be called in DB
-const Collection = mongoose.model('Collection', collectionSchema)
+const Collexn = mongoose.model('Collexn', collexnSchema)
 
 
-module.exports = Collection
+module.exports = Collexn

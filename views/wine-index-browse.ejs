@@ -4,11 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Browse</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+    
+        img {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
 </head>
 <body>
+    <a href="/">Home</a>
+    <a href="/collections">Collections</a>
     <h1>List of wines</h1>
     <ul>
-        <%= allWines%>
+        <% wines.forEach((wine) => { %>
+            <li><img src="<%=wine.thumb%>"> <%=wine.name%> </li>
+        <% }) %>
     </ul>
     
 </body>
