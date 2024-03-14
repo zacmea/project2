@@ -10,12 +10,11 @@ const bcrypt = require("bcrypt");
 
 //set port & other necessary variables
 const PORT = process.env.PORT || 3003;
-const saltRounds = 5;
-let plainTextPassword = "";
+// const saltRounds = 5;
+// let plainTextPassword = "";
 
 //Setting DB connection
 const db = require("./models"); //This will require the index.js file in the models folder, which in turn requires the UserModel.js file
-
 
 //creating express app
 const app = express();

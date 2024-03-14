@@ -5,7 +5,7 @@ const router = express.Router()
 
 
 
-// const db = require('../models')  not working!!
+const db = require('../models')  //not working!!
 
 router.get('/', (req, res) =>{
     res.render("collections-index.ejs")

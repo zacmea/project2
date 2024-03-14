@@ -1,6 +1,6 @@
 //connect schema to mongoose
 const mongoose = require('mongoose')
-const Schema = mongoose.Schema
+// const Schema = mongoose.Schema
 
 //Defining how things should look in the database
 const userSchema = new mongoose.Schema({
