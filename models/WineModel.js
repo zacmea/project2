@@ -11,7 +11,11 @@ const wineSchema = new mongoose.Schema({
     average_rating: mongoose.Decimal128,
     ratings: Number,
     price: mongoose.Decimal128,
-    notes: String
+    notes: String,
+    collection: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Collection'
+    }
 })
 // const wineSchema = new mongoose.Schema({
 //     brand: String,

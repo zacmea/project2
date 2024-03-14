@@ -6,7 +6,11 @@ const collectionSchema = new mongoose.Schema({
     name: String,
     numberOfWines: Number,
     winesIncluded: [{vintage: Number, brand: String, varietal: String,}],
-    isPublic: Boolean
+    isPublic: Boolean,
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User'
+    }
 })
 
 //Defining how data will be called in DB
