@@ -3,10 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title><%=wine.name %></title>
 </head>
 <body>
-    <h1>The wine</h1>
-    Here you'll see the SHOW page for an individual wine, which will (hopefully) have information about the wine and a picture, pulled from a database.
+    <h1> <%=wine.name%> </h1>
+    <img src="<%=wine.thumb%>">
+    
+    <table>
+        <tr id="rowOne">
+            <th>Country</th>
+            <th>Region</th>
+            <th>Avg. Rating</th>
+            <th>Num. of Ratings</th>
+            <th>Purchase</th>
+        </tr>
+        <tr id="rowTwo">
+            <td><%= wine.country%></td>
+            <td><%= wine.region%></td>
+            <td><%= wine.average_rating%></td>
+            <td><%= wine.ratings%></td>
+            <td><a href="<%=wine.link%>">$<%=wine.price%></a></td>
+            </tr>
+    </table>
 </body>
 </html>

@@ -12,9 +12,11 @@ const db = require('../models/') //This will require the index.js file in the mo
 
 
 //------------------ROUTES------------------
-//default starting point
+//default starting point **MAYBE DELETE THIS**
 router.get('/', (req, res) => {
-    res.render("user.ejs", {db})
+    res.render("user.ejs", {
+        db,
+        currentUser: req.session.currentUser})
 })
 //New User--Get form
 router.get('/new', (req, res) => {

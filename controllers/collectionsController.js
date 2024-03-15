@@ -5,7 +5,7 @@ const router = express.Router()
 
 
 
-const db = require('../models')  //not working!!
+const db = require('../models')  
 
 
 //-------ROUTES------
@@ -13,13 +13,15 @@ const db = require('../models')  //not working!!
 router.get('/', (req, res) =>{
     db.Collexn.find({user: req.session.currentUser.id})
     .then(collexns => {
-        res.render("collections-index.ejs", {collexns})
+        res.render("collections-index.ejs", {
+            collexns,
+        currentUser: req.session.currentUser})
     })
 })
 
 //New - get form    //This route should be the form to create a new collection
 router.get('/new', (req, res) =>{
-    res.render("collections-new.ejs")
+    res.render("collections-new.ejs", {currentUser: req.session.currentUser})
 })
 
 //Delete
@@ -32,7 +34,9 @@ router.post('/', async (req, res) => {
 })
 router.get('/:id', (req, res) =>{
     const id= req.params.id
-    res.render("collections-show.ejs", {id})
+    res.render("collections-show.ejs", {
+        id,
+        currentUser: req.session.currentUser})
 })
 
 

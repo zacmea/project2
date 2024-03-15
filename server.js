@@ -6,6 +6,7 @@ const methodOverride = require("method-override");
 const path = require("path");
 const session = require("express-session");
 const bcrypt = require("bcrypt");
+// const isAuthenticated = require("./controllers/isAuthenticated");
 // const bodyParser = require("body-parser");
 
 //set port & other necessary variables
@@ -28,6 +29,7 @@ app.use(express.static("public")); //where the static files are housed
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
+// app.use(isAuthenticated);
 // app.use(bodyParser.urlencoded({ extended: true }));
 app.use(                                 //req.send gets access to req.session--> Allows you to access the session in your various routes
     session({
@@ -60,9 +62,13 @@ app.get("/seed", function (req, res) {
     });
 });
 
-//Default
+//Default (landing page)
 app.get("/", (req, res) => {
-    res.render("home");
+    if(req.session.currentUser){
+        res.render("home", { currentUser: req.session.currentUser });
+    }else{
+        res.render("home");
+    }
 });
 
 //"catch-all" route: for any URL that doesn't match any defined routes

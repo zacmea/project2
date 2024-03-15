@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+</head>
+<header>
+    <h4>Wine-iest™</h4>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/collections">Your Collections</a>
+        <a href="/wines">Browse Wines</a>
+        <!-- <a href="/sessions/new">Login</a>
+        <a href="/users/new">Sign Up</a> -->
+        <form action="/sessions?_method=DELETE" method="POST">
+            <input onclick="window.location.href='/'" type="submit" value="Logout">
+        </form>
+</header>

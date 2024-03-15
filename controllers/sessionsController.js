@@ -3,10 +3,12 @@
 const bcrypt = require("bcrypt");
 const router = require('express').Router()
 const db = require('../models/') //This will require the index.js file in the models folder, which in turn...?
+const isAuthenticated = require("./isAuthenticated");
+// router.use(isAuthenticated);
+
 
 router.get('/new', (req, res) => {
-    res.render("sessions-new.ejs")
-    currentUser: req.session.currentUser
+    res.render("sessions-new.ejs", {currentUser: req.session.currentUser})
 })
 
 router.post('/', async (req, res) => {
@@ -21,6 +23,7 @@ router.post('/', async (req, res) => {
             res.redirect('/')
     }else {
             res.send("Invalid password")
+            .then(res.redirect('/sessions/new'))
     }
 })
         

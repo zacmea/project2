@@ -1,19 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Welcome!</h1>
+<%- include('./partials/header.ejs', {title:"Home"})%>
 
-    This will be the home/landing page with buttons to login, sign up, or read about the project
+<body class="home">
+  <br>
+  <br>
+    <h2>This will be the home/landing page with buttons to login, sign up, or read about the project</h2>
     <br>
     <a href="/sessions/new"> Login </a>
-    <br>
+    <!-- <br>
     <a href="/users/new"> Sign Up </a>
     <br>
-    <a href="/wines"> Browse Wines </a>
+    <a href="/wines"> Browse Wines </a> --> 
 </body>
 </html>
