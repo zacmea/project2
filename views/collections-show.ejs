@@ -9,7 +9,7 @@
     <p>In this collection:</p>
     <ul>
     <% collexn.winesIncluded.forEach((wine) =>{%>
-        <li> <a href=<%=`/wines/${wine.id}`%>><%=wine.name%></a></li>
+        <li> <a id="collections-show-link" href=<%=`/wines/${wine.id}`%>><%=wine.name%></a></li>
    <% }) %>
 </ul>
 </body>

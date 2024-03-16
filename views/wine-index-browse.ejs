@@ -5,7 +5,7 @@
     <h1>Browse zee wines</h1>
     <ul>
         <% wines.forEach((wine) => { %>
-            <li> <a href="/wines/<%=wine.id%>"><img src="<%=wine.thumb%>"> <%=wine.name%> </a> </li>
+            <li> <a href="/wines/<%=wine.id%>"><img id="wine" src="<%=wine.thumb%>"> <%=wine.name%> </a> </li>
         <% }) %>
     </ul>
     

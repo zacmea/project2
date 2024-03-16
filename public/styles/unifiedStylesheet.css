@@ -1,26 +1,30 @@
 #header {
     background-color: #812745 ;
+    position:fixed;
+    top: 10px;
+    width: 100%;
     color: antiquewhite;
     margin:-4px;
     padding: 10px;
+    padding-top: 0px;
     padding-bottom: 8px;
     border-radius: 15px;
     text-align:justify;
     font-size: 20px;
     }
- #headerNav, #headerNav  {
-    max-width: 100%;
+ #headerNav  {
+    max-width: 70%;
     /* display: inline; */
     position: fixed;
-    right: 90px;
-    top: 10px;
+    right: 80px;
+    top: 22px;
     background-color: #812745;
     /* box-shadow: 0px 0px 0px 0px; */
     border: 0px ;
     color: antiquewhite;
     text-decoration: none;
     font-size: 20px;
-    padding: 10px;
+    padding: 8px;
     /* text-align: right; */
     /* float: right; */
     justify-content:space-between;
@@ -34,15 +38,15 @@
 #headerNav .headerInput {
     position:fixed;
     right: 10px;
-    top: 13px;
-    font-size: 18px;
+    top: 26px;
+    font-size: 17px;
 }
 #headerNav .headerA, .headerInput {
-    padding: 0px;
+    
     text-decoration: none;
     color: antiquewhite;
     font-size: 20px;
-    padding: 10px;
+    padding: 8px;
     background-color: #812745;
     border: 0px;
     /* text-align: right; */
@@ -54,16 +58,18 @@
 }
 
 
+
 body, .home body {
     background-image: url('/assets/wineleaf-background.jpg');
     background-size: 100vw 100vh;
     /* background-repeat: no-repeat; */
 }
 
-.home h1{
+h1{
     text-align: center;
         font-size: 10vw;
         padding-top: 20px;
+        margin-top: 100px;
         padding-bottom: 0;
         margin-bottom: 0;
 }
@@ -149,16 +155,38 @@ a:link, a:visited {
  .collections-index #makeNew{
     font-size: 1.5vw;
     margin-bottom: 30px;
-    margin-top: -20px;
+    margin-top: -25px;
  }
  .collections-new-form {
     margin-top: 30px;
     padding-top: 20px;
  }
-    .collections-new-form input, .collections-new-form button{
+.collections-new-form input, .collections-new-form button{
         max-width: 20%;
         margin-bottom: 1.5vh;
         max-height: 80%;
         background-color: antiquewhite;
         font-size: 2.5vh;
-    }
+}
+.collections-show button{
+    background-color: #812745;
+    border:  none;
+    color: antiquewhite;
+    padding: 5px;
+    margin: 10px;
+}
+.collections-show a{
+    margin-left: 20px;
+}
+.wine-index li, .collections-show li {
+    list-style: none;
+    font-size: 3.3vw;
+    background-color: #8d5266;
+    border-radius: 20px;
+    margin: 20px 0 20px -20px
+}
+
+.wine-index #wine {
+    height: 15vw;
+    width: 15vw;
+}
