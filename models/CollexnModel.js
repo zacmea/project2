@@ -6,7 +6,6 @@ const collexnSchema = new mongoose.Schema({
     name: String,
     numberOfWines: Number,
     winesIncluded: [{type: mongoose.Schema.Types.ObjectId, ref: 'Wine'}],
-    isPublic: Boolean,
     user: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'

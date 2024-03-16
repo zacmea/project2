@@ -47,7 +47,7 @@ const sessionCtrl = require("./controllers/sessionsController");
 //-----ROUTES-----
 //Telling our app to look at appropriate controllers for different rout prefixes
 app.use("/users", userCtrl);
-app.use("/collections", collectionsCtrl);
+app.use("/collexns", collectionsCtrl);
 app.use("/wines", wineCtrl);
 app.use("/sessions", sessionCtrl);
 
@@ -65,9 +65,10 @@ app.get("/seed", function (req, res) {
 //Default (landing page)
 app.get("/", (req, res) => {
     if(req.session.currentUser){
-        res.render("home", { currentUser: req.session.currentUser });
+        currentUser = req.session.currentUser;
+        res.render("home", { currentUser });
     }else{
-        res.render("home");
+        res.render("home", { currentUser: null });
     }
 });
 

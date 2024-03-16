@@ -1,7 +1,10 @@
 <%- include('./partials/header.ejs', {title:"Home"})%>
 
 <body class="home">
-  <br>
+  <%if(currentUser){ %>
+    <%=currentUser.name%>
+    <%}%>
+    <br>
   <br>
     <h2>This will be the home/landing page with buttons to login, sign up, or read about the project</h2>
     <br>

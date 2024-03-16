@@ -1,7 +1,14 @@
 <%- include('./partials/header.ejs', {title:"Viewing Collection"})%>
 
 <body class="collections-show">
-    <h1>Collection: <%=id%></h1>
-    This will be the SHOW page for an individual collection, in this case the.  It will have a list of the wines in the collection and some basic info about each.
+    <h1>Collection: <%=collexn.name%></h1>
+    
+    <p>Number of Wines:  <%= collexn.winesIncluded.length%> </p>
+    <p>In this collection:</p>
+    <ul>
+    <% collexn.winesIncluded.forEach((wine) =>{%>
+        <li> <a href=<%=`/wines/${wine.id}`%>><%=wine.name%></a></li>
+   <% }) %>
+</ul>
 </body>
 </html>

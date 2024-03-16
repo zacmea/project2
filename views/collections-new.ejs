@@ -1,11 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+<%- include('./partials/header.ejs', {title:"Browse"})%>
+
+<body class="collections-new"> 
     
+    <form action="/collexns" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="winesIncluded">Wines Included:</label>
+        <select id="winesIncluded" name="winesIncluded" multiple>
+    
+            <!-- Populate options dynamically from database -->
+            <% wines.forEach(wine=> { %>
+                <option value="<%= wine._id %>"> <%= wine.name %> </option>
+                <% }); %>
+        </select>
+       
+    
+        <button type="submit">Create collection</button>
+    </form>
+
 </body>
 </html>
