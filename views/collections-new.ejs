@@ -1,4 +1,4 @@
-<%- include('./partials/header.ejs', {title:"Browse"})%>
+<%- include('./partials/header.ejs', {title:"New Collection"})%>
 
 <body class="collections-new"> 
     
@@ -14,8 +14,6 @@
                 <option value="<%= wine._id %>"> <%= wine.name %> </option>
                 <% }); %>
         </select>
-       
-    
         <button type="submit">Create collection</button>
     </form>
 

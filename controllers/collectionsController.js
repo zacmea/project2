@@ -27,7 +27,29 @@ router.get('/new', async (req, res) =>{
       res.render("collections-new.ejs", {wines, currentUser: req.session.currentUser})
 })
 //Delete
-//Update
+//Update - put form to update
+router.put('/collexns/:id', async (req, res) => {
+    try {
+        const { name, winesIncluded } = req.body;
+
+        // Find the collection by ID and update its properties
+        const updatedCollection = await Collection.findByIdAndUpdate(
+            req.params.id,
+            { name, winesIncluded },
+            { new: true }
+        );
+
+        if (!updatedCollection) {
+            return res.status(404).send('Collection not found');
+        }
+
+        res.redirect('/collexns'); // Redirect to collections list page
+    } catch (err) {
+        console.error(err);
+        res.status(500).send('Server Error');
+    }
+});
+
 //Create - post form
 router.post('/', async (req, res) => {
     const newCollexn = req.body
@@ -40,7 +62,12 @@ router.post('/', async (req, res) => {
 })
 
 
-//Edit
+//Edit - get form
+router.get('/:id/edit', async (req, res) => {
+    const collexn = await db.Collexn.findById(req.params.id)
+    const wines = await db.Wine.find({})
+    res.render("collections-edit.ejs", {collexn, wines, currentUser: req.session.currentUser})
+})
 
 //Show
 router.get('/:id', async (req, res) =>{
