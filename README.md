@@ -38,7 +38,7 @@ This project follows the MVC structure.  The bulk of the project was handled wit
 
 ### Approach taken
 
-I began the project by making ultra-lo-fi wireframes on scrap paper (not shown) because I find visuals helpful for processing my ideas.  I then created my ERDs, and used them to create models for Users and Wines. The Collexns model came after.  Once all of this was accomplished, I began building the basic layout for the controllers, starting with the /seed route.  I used [Vivino API]([url](https://github.com/aptash/vivino-api)) from user aptash to create the seed database.  I then started to build ejs pages for the wines and then moved to the collections ejs pages, ending with the user ejs pages. I nailed down authentication and then began fully building out the rest of the routes.  I began styling at the end and apparently fell back in time to the 90s for the first iteration of styling.  Later, I will adjust the styling to make it current.
+I began the project by making ultra-lo-fi wireframes on scrap paper (not shown) because I find visuals helpful for processing my ideas.  I then created my ERDs, and used them to create models for Users and Wines. The Collexns model came after.  Once all of this was accomplished, I began building the basic layout for the controllers, starting with the /seed route.  I used [Vivino API](https://github.com/aptash/vivino-api) from user aptash to create the seed database.  I then started to build ejs pages for the wines and then moved to the collections ejs pages, ending with the user ejs pages. I nailed down authentication and then began fully building out the rest of the routes.  I began styling at the end and apparently fell back in time to the 90s for the first iteration of styling.  Later, I will adjust the styling to make it current.
 
 ## Installation and Startup Instructions
 To get start Please Navigate to
@@ -56,7 +56,7 @@ I wanted users to be able to share their lists with other users.  I also wanted 
 
 
 ## Special Thanks
-Thanks to classmate Tyler Carson for helping me find the API I used to create my seed.js model.
-Thanks to gitHub user aptash for creating the [Vivino API]([url](https://github.com/aptash/vivino-api))
-Thanks to instructors Billie & Justin for giving their time to thought-partner and debug with me.
-Thanks to the cohort's Discord crew for keeping me on track and accountable throughout the project.
+-Thanks to classmate Tyler Carson for helping me find the API I used to create my seed.js model. <br>
+-Thanks to gitHub user [aptash](https://github.com/aptash) for creating the [Vivino API](https://github.com/aptash/vivino-api) <br>
+-Thanks to instructors Billie & Justin for giving their time to thought-partner and debug with me. <br>
+-Thanks to our cohort's Discord crew for keeping me on track and accountable throughout the project.
