@@ -1,0 +1,21 @@
+.header  {
+    background-color: #812745 ;
+    color: white;
+    margin:-4px;
+    padding: 10px;
+    padding-bottom: 8px;
+    text-align:justify;
+    }
+
+.home {
+    background-image: url('/assets/wineleaf-background.jpg');
+    background-size: fill;
+    background-repeat: no-repeat;
+}
+
+.home h1 {;
+    text-align: center;
+    font-size: 50px;
+    padding-top: 20px;
+    padding-bottom: 80px;
+}
