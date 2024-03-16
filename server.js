@@ -5,14 +5,12 @@ const express = require("express");
 const methodOverride = require("method-override");
 const path = require("path");
 const session = require("express-session");
-const bcrypt = require("bcrypt");
+// const bcrypt = require("bcrypt");
 // const isAuthenticated = require("./controllers/isAuthenticated");
-// const bodyParser = require("body-parser");
 
 //set port & other necessary variables
 const PORT = process.env.PORT || 3003;
-// const saltRounds = 5;
-// let plainTextPassword = "";
+
 
 //Setting DB connection
 const db = require("./models"); //This will require the index.js file in the models folder, which in turn requires the UserModel.js file
@@ -68,7 +66,7 @@ app.get("/", (req, res) => {
         currentUser = req.session.currentUser;
         res.render("home", { currentUser });
     }else{
-        res.render("home", { currentUser: null });
+        res.render("home", { currentUser: null});
     }
 });
 

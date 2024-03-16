@@ -6,16 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= title %></title>
 </head>
-<header>
-    <h4>Wine-iest™</h4>
-    <nav>
-        <a href="/">Home</a>
-        <a href="/collexns">Your Collections</a>
-        <a href="/wines">Browse Wines</a>
-        <!-- <a href="/sessions/new">Login</a>
-        <a href="/users/new">Sign Up</a> -->
-        <form action="/sessions?_method=DELETE" method="POST">
-            <input onclick="window.location.href='/'" type="submit" value="Logout">
-        </form>
-        </nav>
+<header class="header">
+    <h3>Wine-iest™</h3>
+<% if(!currentUser) { %>
+<% } else { %>
+    <a href="/users/<%= currentUser._id %>"><img src="https://i.imgur.com/fY30HrV.jpg"></a>
+    <a href="/wines">Wines</a>
+    <a href="/collexns">Collections</a>
+    <a href="/">Home</a>
+    <!-- <a href="/sessions/logout">Logout</a> -->
+    <form action="/sessions?_method=DELETE" method="POST">
+        <input type="submit" value="Logout">
+<% } %>
+<hr>
 </header>

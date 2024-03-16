@@ -6,7 +6,8 @@ const db = require('../models/') //This will require the index.js file in the mo
 const isAuthenticated = require("./isAuthenticated");
 // router.use(isAuthenticated);
 
-
+//-------ROUTES------
+//New - get LOGIN form
 router.get('/new', (req, res) => {
     res.render("sessions-new.ejs", {currentUser: req.session.currentUser})
 })
@@ -27,6 +28,7 @@ router.post('/', async (req, res) => {
     }
 })
         
+//Logout / Destroy session
 router.delete('/', (req, res) => {
     req.session.destroy(() => {
         res.redirect('/')

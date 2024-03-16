@@ -1,26 +1,23 @@
 //Remember that all routes here are prefixed with /users
 
 const router = require('express').Router()
-
-
-// const db = require('../models/index')
 const bcrypt = require("bcrypt");
-// const bodyParser = require("body-parser");
-// const saltRounds = 5;
 
 const db = require('../models/') //This will require the index.js file in the models folder, which in turn requires the UserModel.js file
 
 
 //------------------ROUTES------------------
 //default starting point **MAYBE DELETE THIS**
-router.get('/', (req, res) => {
-    res.render("user.ejs", {
-        db,
-        currentUser: req.session.currentUser})
-})
+// router.get('/', (req, res) => {
+//     res.render("user.ejs", {
+//         db,
+//         currentUser: req.session.currentUser})
+// })
+
+
 //New User--Get form
 router.get('/new', (req, res) => {
-    res.render("user-new.ejs")
+    res.render("user-new.ejs", {currentUser: req.session.currentUser})
 })
 
 //Create User--Post form
@@ -33,6 +30,11 @@ router.post('/', async (req, res) => {
         res.redirect('/')    
 })
 
+//SHOW (profile page)
+router.get('/:id', async (req, res) => {
+    const user = await db.User.findById(req.params.id)
+    res.render('user-show.ejs', {user})
+})
 
 
 

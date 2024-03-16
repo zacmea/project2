@@ -1,17 +1,16 @@
 <%- include('./partials/header.ejs', {title:"Home"})%>
 
-<body class="home">
-  <%if(currentUser){ %>
-    <%=currentUser.name%>
-    <%}%>
-    <br>
-  <br>
-    <h2>This will be the home/landing page with buttons to login, sign up, or read about the project</h2>
-    <br>
-    <a href="/sessions/new"> Login </a>
-    <!-- <br>
-    <a href="/users/new"> Sign Up </a>
-    <br>
-    <a href="/wines"> Browse Wines </a> --> 
-</body>
-</html>
+    <body class="home">
+        <%if(currentUser){ %>
+            <h1>Welcome, <%=currentUser.name%>!</h1>
+            <a href="/collexns"> View your collections </a>
+            <a href="/wines"> Browse wines </a>
+
+        <%}else {%>
+            <h1>Welcome!</h1>
+            <a href="/sessions/new"> Login </a>
+            <a href="/users/new"> Sign Up </a>
+        <%}%>
+    </body>
+
+    </html>
