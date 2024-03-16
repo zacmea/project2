@@ -1,7 +1,7 @@
 <%- include('./partials/header.ejs', {title:"Edit Collection"})%>
 
 <body>
-    <form action="/collexns/<%= collexn._id %>?_method=PUT" method="POST">
+    <form action="<%=`/collexns/${collexn.id}`%>?_method=PUT" method="POST">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" value="<%= collexn.name %>" required>
     
@@ -15,8 +15,8 @@
                 </option>
                 <% }); %>
         </select>
-    
-        <button type="submit">Update collection</button>
+        <input type="submit" value="Update Collection">
+        <!-- <button type="submit">Update collection</button> -->
     </form>
 </body>
 </html>

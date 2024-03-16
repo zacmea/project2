@@ -3,6 +3,8 @@
 <body class="collections-show">
     <h1>Collection: <%=collexn.name%></h1>
     <a href="/collexns/<%=collexn.id%>/edit">Edit this collection</a>
+    <form action="<%=`/collexns/${collexn.id}`%>?_method=DELETE" method="POST">
+        <button type="submit">Delete this collection</button>
     <p>Number of Wines:  <%= collexn.winesIncluded.length%> </p>
     <p>In this collection:</p>
     <ul>
