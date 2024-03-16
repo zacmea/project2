@@ -30,7 +30,7 @@
     justify-content:space-between;
     align-content: right;
     margin-top: 0px;
-    margin-left:auto;
+    /* margin-left:auto; */
 }
 #headerNav img{
     height: 18px;
@@ -157,17 +157,29 @@ a:link, a:visited {
     margin-bottom: 30px;
     margin-top: -15px;
  }
- .collections-new-form {
-    margin-top: 30px;
-    padding-top: 20px;
+ #collections-new-form, #collections-edit-form{
+    display: flex;
+    flex-direction: column;
+    margin-top: 80px;
+    padding-top: 40px;
+    font-size: 3vw;
+    justify-content:center;
+    
  }
-.collections-new-form input, .collections-new-form button{
-        max-width: 20%;
+#collections-new-form input, #collections-new-form button, #collections-edit-form input, #collections-edit-form button{
+        max-width: 40%;
         margin-bottom: 1.5vh;
-        max-height: 80%;
+        height: 40px;
         background-color: antiquewhite;
-        font-size: 2.5vh;
+        font-size: 2vw;
+        color: black;
 }
+#collections-new-form select, #collections-edit-form select{
+    background-color: antiquewhite;
+    font-size: 2vw;
+    max-width: 60%;
+}
+
 .collections-show button{
     background-color: #812745;
     border:  none;
@@ -177,6 +189,9 @@ a:link, a:visited {
 }
 .collections-show a{
     margin-left: 20px;
+}
+.collections-show p{
+    font-size: 28px;
 }
 .wine-index li, .collections-show li {
     list-style: none;

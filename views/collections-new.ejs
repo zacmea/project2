@@ -2,10 +2,10 @@
 
 <body class="collections-new"> 
     
-    <form class="collections-new-form" action="/collexns" method="POST">
+    <form id="collections-new-form" action="/collexns" method="POST">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required>
-        
+        <br>
         <label for="winesIncluded">Wines Included:</label>
         <select id="winesIncluded" name="winesIncluded" multiple>
     
@@ -14,6 +14,7 @@
                 <option value="<%= wine._id %>"> <%= wine.name %> </option>
                 <% }); %>
         </select>
+        <br>
         <button type="submit">Create collection</button>
     </form>
 

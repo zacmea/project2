@@ -1,12 +1,12 @@
 <%- include('./partials/header.ejs', {title:"Edit Collection"})%>
 
 <body>
-    <form action="<%=`/collexns/${collexn.id}`%>?_method=PUT" method="POST">
+    <form id="collections-edit-form" action="<%=`/collexns/${collexn.id}`%>?_method=PUT" method="POST">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" value="<%= collexn.name %>" required>
     
         <label for="winesIncluded">Wines Included:</label>
-        <select id="winesIncluded" name="winesIncluded" multiple>
+        <select id="winesIncluded" name="winesIncluded" multiple="multiple">
             <!-- Populate options dynamically from database -->
             <% wines.forEach(wine=> { %>
                 <option value="<%= wine._id %>" <% if (collexn.winesIncluded.includes(wine._id)) { %> selected <% } %>
@@ -15,7 +15,8 @@
                 </option>
                 <% }); %>
         </select>
-        <input type="submit" value="Update Collection">
+        <br>
+        <button type="submit">Update Collection</button>
         <!-- <button type="submit">Update collection</button> -->
     </form>
 </body>
