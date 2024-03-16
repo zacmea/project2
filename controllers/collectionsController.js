@@ -36,6 +36,7 @@ router.put("/:id", async (req, res) => {
     const updatedCollection = await db.Collexn.findByIdAndUpdate(req.params.id, req.body, {
         new: true,
     });
+    res.redirect(`/collexns/${updatedCollection.id}`);
 });
 
 //Create - post form

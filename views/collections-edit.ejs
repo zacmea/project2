@@ -6,7 +6,7 @@
         <input type="text" id="name" name="name" value="<%= collexn.name %>" required>
     
         <label for="winesIncluded">Wines Included:</label>
-        <select id="winesIncluded" name="winesIncluded" multiple="multiple">
+        <select id="winesIncluded" name="winesIncluded" multiple>
             <!-- Populate options dynamically from database -->
             <% wines.forEach(wine=> { %>
                 <option value="<%= wine._id %>" <% if (collexn.winesIncluded.includes(wine._id)) { %> selected <% } %>
