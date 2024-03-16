@@ -3,13 +3,17 @@
     <body class="home">
         <%if(currentUser){ %>
             <h1>Welcome, <%=currentUser.name%>!</h1>
-            <a href="/collexns"> View your collections </a>
-            <a href="/wines"> Browse wines </a>
-
+            <div>
+            <a class="a" href="/collexns"> View your collections </a>
+            <a class="a"href="/wines"> Browse wines </a>
+            </div>
         <%}else {%>
             <h1>Welcome!</h1>
-            <a href="/sessions/new"> Login </a>
-            <a href="/users/new"> Sign Up </a>
+            <h2>Wine a little; laugh a lot</h2>
+            <div id="nav">
+            <a class="a" href="/sessions/new"> Login </a>
+            <a class="a" href="/users/new"> Sign Up </a>
+            </div>
         <%}%>
     </body>
 

@@ -1,21 +1,164 @@
-.header  {
+#header {
     background-color: #812745 ;
-    color: white;
+    color: antiquewhite;
     margin:-4px;
     padding: 10px;
     padding-bottom: 8px;
+    border-radius: 15px;
     text-align:justify;
+    font-size: 20px;
     }
+ #headerNav, #headerNav  {
+    max-width: 100%;
+    /* display: inline; */
+    position: fixed;
+    right: 90px;
+    top: 10px;
+    background-color: #812745;
+    /* box-shadow: 0px 0px 0px 0px; */
+    border: 0px ;
+    color: antiquewhite;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 10px;
+    /* text-align: right; */
+    /* float: right; */
+    justify-content:space-between;
+    align-content: right;
+    margin-top: 0px;
+    margin-left:auto;
+}
+#headerNav img{
+    height: 20px;
+}
+#headerNav .headerInput {
+    position:fixed;
+    right: 10px;
+    top: 13px;
+    font-size: 18px;
+}
+#headerNav .headerA, .headerInput {
+    padding: 0px;
+    text-decoration: none;
+    color: antiquewhite;
+    font-size: 20px;
+    padding: 10px;
+    background-color: #812745;
+    border: 0px;
+    /* text-align: right; */
+    /* float: right; */
+    justify-content:space-between;
+    align-content: right;
+    margin-top: 0px;
+    margin-left:auto;
+}
 
-.home {
+
+body, .home body {
     background-image: url('/assets/wineleaf-background.jpg');
-    background-size: fill;
-    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+    /* background-repeat: no-repeat; */
 }
 
-.home h1 {;
+.home h1{
     text-align: center;
-    font-size: 50px;
-    padding-top: 20px;
-    padding-bottom: 80px;
+        font-size: 10vw;
+        padding-top: 20px;
+        padding-bottom: 0;
+        margin-bottom: 0;
 }
+
+.home h2{
+    font-style: italic;
+    text-align: center;
+    font-size: 4vw;
+    padding-top: 0;
+    margin-top: 0;
+    padding-bottom: 25px;
+}
+
+a:link, a:visited {
+    text-decoration: none;
+    
+    color:antiquewhite;
+}
+.home .a, .collections-index #makeNew {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    margin: 30px auto;
+    max-width: 35%;
+    text-align: center;
+    justify-content: space-evenly;
+    border-radius: 15px;
+    padding: 10px;
+    background-color: #812745;
+    font-size: 4.5vw;
+}
+
+
+ h1{
+    text-align: center;
+    font-size: 5.5vw;
+}
+.login label {
+    /* max-width: 50%; */
+    font-size: 5vh;
+    margin-left: 5vw;
+    /* padding-bottom: 20px; */
+}
+.login input, .user-new input {
+    max-width: 80%;
+    margin-bottom: 1.5vh;
+    max-height: 80%;
+    margin-left: 5vw;
+    background-color: antiquewhite;
+    font-size: 5vh;
+}
+
+.user-new .user-new-form, .user-new-form input {
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* margin: 0 auto; */
+    
+    margin-bottom: 0;
+    padding: 10px;
+    border-radius: 15px;
+    color: black;
+    max-width: 80%;
+    font-size: 5vh;
+ } 
+
+ .collections-index li {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    margin: 15px;;
+    margin-left: -10px;
+    max-width: 35%;
+    text-align: left;
+    /* justify-content: space-evenly; */
+    border-radius: 20px;
+    padding: 10px;
+    padding-left: 20px;
+    background-color: #8d5266;
+    font-size: 2.5vw;
+    list-style-type: none;
+ }
+
+ .collections-index #makeNew{
+    font-size: 1.5vw;
+    margin-bottom: 30px;
+    margin-top: -20px;
+ }
+ .collections-new-form {
+    margin-top: 30px;
+    padding-top: 20px;
+ }
+    .collections-new-form input, .collections-new-form button{
+        max-width: 20%;
+        margin-bottom: 1.5vh;
+        max-height: 80%;
+        background-color: antiquewhite;
+        font-size: 2.5vh;
+    }
