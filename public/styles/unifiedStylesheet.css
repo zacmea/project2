@@ -193,7 +193,7 @@ a:link, a:visited {
 .collections-show p{
     font-size: 28px;
 }
-.wine-index li, .collections-show li {
+.collections-show li {
     list-style: none;
     font-size: 3.3vw;
     background-color: #8d5266;
@@ -205,3 +205,60 @@ a:link, a:visited {
     height: 15vw;
     width: 15vw;
 }
+
+.wine-index {
+    text-align: center;
+}
+
+.wine-index ul {
+    display: flexbox
+
+}
+.wine-show {
+    display: flex;
+    flex-direction: column;
+    margin-top: 80px;
+    padding-top: 40px;
+    font-size: 1.5vw;
+    justify-content:center;
+    text-align: center;
+}
+
+.wine-show table {
+    background-color: #8d5266;
+    margin: 0 auto;
+    font-size: 1.5vw;
+    text-align: center;
+    border: 1px#812745
+}
+
+.wine-show td, th {
+    padding: 8px 20px;
+    border: 1px solid #ffffff;
+}
+#wineImg {
+    height: 25vw;
+    width: 25vw;
+    border-radius: 15px;
+    margin: 20px auto;
+}
+
+.wine-show h1 {
+    font-size: 4vw;
+    margin-bottom: 20px;
+    margin-top: -20px
+}
+
+#wineTile {
+    margin-left: 0;
+        width: 33%;
+        padding: 40px 5px;
+        background-color: #8d5266;
+        display: grid;
+        place-items: center;
+        float: left;
+        border-radius: 50px;
+        margin-bottom: 20px;
+        font-size: 1.4vw;
+        text-align: center;
+    }
