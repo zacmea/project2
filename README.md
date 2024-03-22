@@ -55,6 +55,10 @@ The main issues for which I struggle to find a workaround are style-based.
 I wanted users to be able to share their lists with other users.  I also wanted to allow users to add wines manually to the database.  I finally wanted to give users a way to delete and update their profile.  Time was the major limiting factor for these concerns.
 
 
+## Resources & References
+In addition to the Vivino API mentioned previously, I used chatGPT to help me create forms and to debug code.  I consulted [W3Schools](https://www.w3schools.com/) for information on styling and methods.  I also referred to documentation for [MongoDB](https://www.mongodb.com/) and [Mongoose](https://mongoosejs.com/docs/), as well as consulting [stackoverflow](www.stackoverflow.com).  I used [Computer Hope's color picker](https://www.computerhope.com/htmcolor.htm#color-codes) to get color codes for styling.
+
+
 ## Special Thanks
 -Thanks to classmate Tyler Carson for helping me find the API I used to create my seed.js model. <br>
 -Thanks to gitHub user [aptash](https://github.com/aptash) for creating the [Vivino API](https://github.com/aptash/vivino-api) <br>
